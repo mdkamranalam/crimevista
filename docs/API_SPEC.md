@@ -166,3 +166,29 @@ Accepts a CSV file and stores normalized records.
 - Use standard HTTP status codes.
 - Keep responses compact and frontend-friendly.
 - Include pagination for large result sets.
+- Use consistent lowercase route naming.
+- Provide clear error payloads with message and code fields.
+- Include optional filters rather than forcing the frontend to fetch everything.
+
+## 11. Suggested Response Shape for Errors
+
+```json
+{
+  "success": false,
+  "error": {
+    "code": "invalid_query",
+    "message": "The requested district filter is not recognized."
+  }
+}
+```
+
+## 12. Suggested Pagination Shape
+
+```json
+{
+  "items": [],
+  "count": 0,
+  "limit": 20,
+  "offset": 0
+}
+```

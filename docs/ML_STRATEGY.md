@@ -62,5 +62,17 @@ The model should produce explainable insights such as:
 - recent spike in crime type
 - repeated incidents in the same district
 - unusual pattern relative to historical norms
+- relationship strength between connected entities
 
 This keeps the intelligence understandable for analysts and judges.
+
+## 5. Minimum Viable Intelligence Outputs
+
+The MVP should at least provide:
+
+- one hotspot view
+- one anomaly summary
+- one risk score card
+- one explainable insight sentence for each output
+
+These outputs should be easy to understand without technical explanation.

@@ -34,3 +34,13 @@
 - polish workflows
 - reduce friction in the user journey
 - create a concise presentation and walkthrough
+- rehearse the story from problem -> insight -> action
+- ensure the dashboard is understandable in a short live demo
+
+## Suggested Milestones
+
+- Milestone 1: data and schema ready
+- Milestone 2: backend APIs working
+- Milestone 3: dashboard UI connected to real data
+- Milestone 4: AI insights visible and explainable
+- Milestone 5: demo-ready polish and final walkthrough

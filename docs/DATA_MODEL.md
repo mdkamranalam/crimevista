@@ -127,8 +127,24 @@ CREATE TABLE locations (
 - Coordinates should be normalized and validated.
 - Duplicate records should be flagged and prevented where possible.
 - Missing values should be explicitly handled in analytics.
+- Date values should follow a consistent timezone-aware format.
+- Standardized lookups should be used for district names, station names, and crime categories.
+- Any ingestion from CSV or spreadsheets should preserve a source reference for auditing.
 
-## 4. Analytics-Ready Features
+## 4. Suggested Derived Fields
+
+For better dashboards and analytics, store or compute the following derived values:
+
+- crime_count_last_7_days
+- crime_count_last_30_days
+- hotspot_score
+- anomaly_flag
+- risk_score
+- repeat_offender_count
+- relation_degree
+- district_trend_delta
+
+## 5. Analytics-Ready Features
 
 The system should also maintain derived features for ML and dashboards:
 
@@ -140,7 +156,7 @@ The system should also maintain derived features for ML and dashboards:
 - repeat offender count
 - network degree centrality
 
-## 5. Example Ingestion Assumptions
+## 6. Example Ingestion Assumptions
 
 The initial MVP can work from a curated CSV or JSON dataset with at least the following fields:
 

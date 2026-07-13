@@ -53,6 +53,15 @@ Responsibilities:
 2. Ankur prepares the analytics methods and sample insights.
 3. Shivaleela builds the dashboard around the backend API and analytics outputs.
 4. The team reviews the MVP together for demo readiness.
+5. Each day ends with a short check of what is demo-ready and what is still pending.
+
+## Delivery Checklist
+
+- Data is loaded and queryable.
+- API endpoints return the expected structure.
+- Dashboard screens are navigable and visually understandable.
+- At least one AI-based insight is visible and explained.
+- The demo story can be presented in a short, polished walkthrough.
 
 ## Parallel Workstreams
 
@@ -79,3 +88,5 @@ Responsibilities:
 - keep the solution aligned to the problem statement
 - avoid feature creep
 - prioritize the MVP demo experience
+- keep documentation updated as work progresses
+- communicate blockers early to avoid rework

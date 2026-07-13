@@ -93,8 +93,23 @@ Raw crime data -> Cleaning & normalization -> PostgreSQL/PostGIS -> API -> Dashb
 - Return structured JSON for frontend consumption.
 - Separate read operations from analytics-heavy operations.
 - Avoid putting business logic into the frontend.
+- Prefer explicit, versioned routes such as /api/v1/...
+- Use pagination and filters for large datasets.
+- Keep error responses consistent and easy for the UI to consume.
 
-## 6. Deployment Approach
+## 6. Frontend Interaction Model
+
+The frontend should be organized around a few core user journeys:
+
+1. Landing dashboard overview
+2. Incident browsing with filters
+3. Map-based hotspot exploration
+4. Relationship or network inspection
+5. AI insight explanation and drill-down
+
+Each view should be backed by a dedicated API endpoint and should not depend on direct database access.
+
+## 7. Deployment Approach
 
 ### Local Development
 
@@ -107,7 +122,7 @@ Raw crime data -> Cleaning & normalization -> PostgreSQL/PostGIS -> API -> Dashb
 - Docker-based deployment is preferred for a clean, repeatable demo setup
 - Optional cloud deployment later if needed
 
-## 7. Architecture Decisions
+## 8. Architecture Decisions
 
 ### Why FastAPI?
 
@@ -121,7 +136,7 @@ This stack fits the platform well because it supports structured data and geospa
 
 React is a strong fit for interactive dashboards and reusable UI components.
 
-## 8. MVP Scope
+## 9. MVP Scope
 
 The initial architecture must support:
 
@@ -132,7 +147,7 @@ The initial architecture must support:
 - network link analysis
 - AI-based risk and anomaly insights
 
-## 9. Non-Goals for MVP
+## 10. Non-Goals for MVP
 
 - citizen mobile app
 - multi-tenant enterprise auth
