@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b63cc4085bdf89fdce01a0fae7e31002 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b63cc4085bdf89fdce01a0fae7e31002" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b63cc4085bdf89fdce01a0fae7e31002 = L.map(
+                "map_b63cc4085bdf89fdce01a0fae7e31002",
+                {
+                    center: [13.998505232890045, 76.60490825245276],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_981d98e4ac301c2c3b4efaf509bc843e = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_981d98e4ac301c2c3b4efaf509bc843e.addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+            var circle_marker_c45592e8ca0a21f32bcad47c712daf3f = L.circleMarker(
+                [16.21945563098779, 75.55407620734434],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_8671493835cc5fe6d0ee79d91757abf4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d2bf41dc04855fe130d8953631fec585 = $(`<div id="html_d2bf41dc04855fe130d8953631fec585" style="width: 100.0%; height: 100.0%;"><b>District:</b> Bagalkot<br><b>Predicted Risk:</b> High Risk<br><b>Historical Crimes:</b> 9749</div>`)[0];
+                popup_8671493835cc5fe6d0ee79d91757abf4.setContent(html_d2bf41dc04855fe130d8953631fec585);
+            
+        
+
+        circle_marker_c45592e8ca0a21f32bcad47c712daf3f.bindPopup(popup_8671493835cc5fe6d0ee79d91757abf4)
+        ;
+
+        
+    
+    
+            var circle_marker_b6c12bc1438bfe7d1bc0d04596820ac9 = L.circleMarker(
+                [15.28143387069436, 76.84048807114898],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_87f0aff7be7c1d216d352bf22aec8bb7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fc0b4c675322d389d4a94b2379bac776 = $(`<div id="html_fc0b4c675322d389d4a94b2379bac776" style="width: 100.0%; height: 100.0%;"><b>District:</b> Ballari<br><b>Predicted Risk:</b> Low Risk<br><b>Historical Crimes:</b> 2949</div>`)[0];
+                popup_87f0aff7be7c1d216d352bf22aec8bb7.setContent(html_fc0b4c675322d389d4a94b2379bac776);
+            
+        
+
+        circle_marker_b6c12bc1438bfe7d1bc0d04596820ac9.bindPopup(popup_87f0aff7be7c1d216d352bf22aec8bb7)
+        ;
+
+        
+    
+    
+            var circle_marker_2a14fe79086488de7939eecfe2f84c94 = L.circleMarker(
+                [15.837102138239999, 74.65081782630666],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_8e22ce425c63963f804bd21b7cc2a7b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c97b3a5329c7b6f0899c5bebf03e8112 = $(`<div id="html_c97b3a5329c7b6f0899c5bebf03e8112" style="width: 100.0%; height: 100.0%;"><b>District:</b> Belagavi City<br><b>Predicted Risk:</b> Low Risk<br><b>Historical Crimes:</b> 750</div>`)[0];
+                popup_8e22ce425c63963f804bd21b7cc2a7b4.setContent(html_c97b3a5329c7b6f0899c5bebf03e8112);
+            
+        
+
+        circle_marker_2a14fe79086488de7939eecfe2f84c94.bindPopup(popup_8e22ce425c63963f804bd21b7cc2a7b4)
+        ;
+
+        
+    
+    
+            var circle_marker_60ba22e99024f82c524e5f9bbc9b3618 = L.circleMarker(
+                [16.18714749225653, 74.92237368830955],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_381947df8ff1ba5c245ff894f282585d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e9b64d83476006aad6b4f848e1a711d = $(`<div id="html_4e9b64d83476006aad6b4f848e1a711d" style="width: 100.0%; height: 100.0%;"><b>District:</b> Belagavi Dist<br><b>Predicted Risk:</b> High Risk<br><b>Historical Crimes:</b> 20598</div>`)[0];
+                popup_381947df8ff1ba5c245ff894f282585d.setContent(html_4e9b64d83476006aad6b4f848e1a711d);
+            
+        
+
+        circle_marker_60ba22e99024f82c524e5f9bbc9b3618.bindPopup(popup_381947df8ff1ba5c245ff894f282585d)
+        ;
+
+        
+    
+    
+            var circle_marker_45af09c0620da6c3d737af8666f81f13 = L.circleMarker(
+                [12.95435766699398, 77.56655933420717],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_f27f386940867b2e51345f3e5c2e4cae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bcf331a741924c3f7b35ef3f43cdcc8f = $(`<div id="html_bcf331a741924c3f7b35ef3f43cdcc8f" style="width: 100.0%; height: 100.0%;"><b>District:</b> Bengaluru City<br><b>Predicted Risk:</b> High Risk<br><b>Historical Crimes:</b> 130718</div>`)[0];
+                popup_f27f386940867b2e51345f3e5c2e4cae.setContent(html_bcf331a741924c3f7b35ef3f43cdcc8f);
+            
+        
+
+        circle_marker_45af09c0620da6c3d737af8666f81f13.bindPopup(popup_f27f386940867b2e51345f3e5c2e4cae)
+        ;
+
+        
+    
+    
+            var circle_marker_24fa2024d044e9e431f7324a2341df19 = L.circleMarker(
+                [13.027622236746256, 77.60931187732449],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_9af7e075097c496738e721534bdc2e45 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5eb6496e3d2a52011475d667bd133f6a = $(`<div id="html_5eb6496e3d2a52011475d667bd133f6a" style="width: 100.0%; height: 100.0%;"><b>District:</b> Bengaluru Dist<br><b>Predicted Risk:</b> High Risk<br><b>Historical Crimes:</b> 35055</div>`)[0];
+                popup_9af7e075097c496738e721534bdc2e45.setContent(html_5eb6496e3d2a52011475d667bd133f6a);
+            
+        
+
+        circle_marker_24fa2024d044e9e431f7324a2341df19.bindPopup(popup_9af7e075097c496738e721534bdc2e45)
+        ;
+
+        
+    
+    
+            var circle_marker_77941ad19753363336c98dba01db7c20 = L.circleMarker(
+                [17.886539843895545, 77.25124386118202],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_8f74b3f6b86e620fdf3cca8b16439cd4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6f5151c54e4f1d27735e072c58d9184c = $(`<div id="html_6f5151c54e4f1d27735e072c58d9184c" style="width: 100.0%; height: 100.0%;"><b>District:</b> Bidar<br><b>Predicted Risk:</b> High Risk<br><b>Historical Crimes:</b> 10186</div>`)[0];
+                popup_8f74b3f6b86e620fdf3cca8b16439cd4.setContent(html_6f5151c54e4f1d27735e072c58d9184c);
+            
+        
+
+        circle_marker_77941ad19753363336c98dba01db7c20.bindPopup(popup_8f74b3f6b86e620fdf3cca8b16439cd4)
+        ;
+
+        
+    
+    
+            var circle_marker_538f257532f488ff3ec3889fff740d04 = L.circleMarker(
+                [12.909367, 77.638757],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_13036e136ff18935eefe1ce4784a27b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f52dd8628996adb19d607223d7e44bd6 = $(`<div id="html_f52dd8628996adb19d607223d7e44bd6" style="width: 100.0%; height: 100.0%;"><b>District:</b> CID<br><b>Predicted Risk:</b> Low Risk<br><b>Historical Crimes:</b> 1</div>`)[0];
+                popup_13036e136ff18935eefe1ce4784a27b8.setContent(html_f52dd8628996adb19d607223d7e44bd6);
+            
+        
+
+        circle_marker_538f257532f488ff3ec3889fff740d04.bindPopup(popup_13036e136ff18935eefe1ce4784a27b8)
+        ;
+
+        
+    
+    
+            var circle_marker_8512a56f49433d74eccd73519dc5fc35 = L.circleMarker(
+                [12.030332078609524, 77.04794876085714],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_3892b36b555faa3afe21e9f4739c36fd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f3675fe0200f3264a0a912c2f8f8662b = $(`<div id="html_f3675fe0200f3264a0a912c2f8f8662b" style="width: 100.0%; height: 100.0%;"><b>District:</b> Chamarajanagar<br><b>Predicted Risk:</b> Medium Risk<br><b>Historical Crimes:</b> 5250</div>`)[0];
+                popup_3892b36b555faa3afe21e9f4739c36fd.setContent(html_f3675fe0200f3264a0a912c2f8f8662b);
+            
+        
+
+        circle_marker_8512a56f49433d74eccd73519dc5fc35.bindPopup(popup_3892b36b555faa3afe21e9f4739c36fd)
+        ;
+
+        
+    
+    
+            var circle_marker_5dd8050cdd0e58623e4c3e9666198daf = L.circleMarker(
+                [13.53425608954159, 77.8083736928119],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_1fdab406edf37a01bef743a54a989cc4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e036ea37cb5f3206f53c246338e908a7 = $(`<div id="html_e036ea37cb5f3206f53c246338e908a7" style="width: 100.0%; height: 100.0%;"><b>District:</b> Chickballapura<br><b>Predicted Risk:</b> Medium Risk<br><b>Historical Crimes:</b> 7192</div>`)[0];
+                popup_1fdab406edf37a01bef743a54a989cc4.setContent(html_e036ea37cb5f3206f53c246338e908a7);
+            
+        
+
+        circle_marker_5dd8050cdd0e58623e4c3e9666198daf.bindPopup(popup_1fdab406edf37a01bef743a54a989cc4)
+        ;
+
+        
+    
+    
+            var circle_marker_d031231551d00086df43c1e4f7bd9cc8 = L.circleMarker(
+                [13.452460761207037, 75.77394182713797],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_d3291d16555938fdd331816612b26c1b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6e4aa496a3cd1945026382ea5ca60094 = $(`<div id="html_6e4aa496a3cd1945026382ea5ca60094" style="width: 100.0%; height: 100.0%;"><b>District:</b> Chikkamagaluru<br><b>Predicted Risk:</b> High Risk<br><b>Historical Crimes:</b> 12278</div>`)[0];
+                popup_d3291d16555938fdd331816612b26c1b.setContent(html_6e4aa496a3cd1945026382ea5ca60094);
+            
+        
+
+        circle_marker_d031231551d00086df43c1e4f7bd9cc8.bindPopup(popup_d3291d16555938fdd331816612b26c1b)
+        ;
+
+        
+    
+    
+            var circle_marker_f22cec3cc61c97c2afd2a35f4f44b71c = L.circleMarker(
+                [14.18850280398101, 76.46080091944751],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_798fa6f5b4ddb5e90a98a276d38826e3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3d39ec0cb3074e5a307d252c42e6e484 = $(`<div id="html_3d39ec0cb3074e5a307d252c42e6e484" style="width: 100.0%; height: 100.0%;"><b>District:</b> Chitradurga<br><b>Predicted Risk:</b> Low Risk<br><b>Historical Crimes:</b> 4298</div>`)[0];
+                popup_798fa6f5b4ddb5e90a98a276d38826e3.setContent(html_3d39ec0cb3074e5a307d252c42e6e484);
+            
+        
+
+        circle_marker_f22cec3cc61c97c2afd2a35f4f44b71c.bindPopup(popup_798fa6f5b4ddb5e90a98a276d38826e3)
+        ;
+
+        
+    
+    
+            var circle_marker_a8116361c7d40b577f9edf089d4639df = L.circleMarker(
+                [13.029547125, 74.8180918125],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_df2e64b0bc4595f44c9f184cc6bdd663 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2467108e9f21fd255b4fd6675935cfa9 = $(`<div id="html_2467108e9f21fd255b4fd6675935cfa9" style="width: 100.0%; height: 100.0%;"><b>District:</b> Coastal Security Police<br><b>Predicted Risk:</b> Low Risk<br><b>Historical Crimes:</b> 16</div>`)[0];
+                popup_df2e64b0bc4595f44c9f184cc6bdd663.setContent(html_2467108e9f21fd255b4fd6675935cfa9);
+            
+        
+
+        circle_marker_a8116361c7d40b577f9edf089d4639df.bindPopup(popup_df2e64b0bc4595f44c9f184cc6bdd663)
+        ;
+
+        
+    
+    
+            var circle_marker_c6b2c7e7e153b0407dda855289e2cf66 = L.circleMarker(
+                [12.829758902852808, 75.22116489453718],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_dfb30f900bfeb6007540f4581d26c0df = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4d212a3e48edcd023d174b77abc34db9 = $(`<div id="html_4d212a3e48edcd023d174b77abc34db9" style="width: 100.0%; height: 100.0%;"><b>District:</b> Dakshina Kannada<br><b>Predicted Risk:</b> Medium Risk<br><b>Historical Crimes:</b> 6590</div>`)[0];
+                popup_dfb30f900bfeb6007540f4581d26c0df.setContent(html_4d212a3e48edcd023d174b77abc34db9);
+            
+        
+
+        circle_marker_c6b2c7e7e153b0407dda855289e2cf66.bindPopup(popup_dfb30f900bfeb6007540f4581d26c0df)
+        ;
+
+        
+    
+    
+            var circle_marker_98bed13ac90a62ee1f592b0c655afc20 = L.circleMarker(
+                [14.352186630871788, 75.88576698633422],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_ddd8bce03e6c6fdd928dbfd2570d1330 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_726dc58679611bbc1669b6fd8b01ece9 = $(`<div id="html_726dc58679611bbc1669b6fd8b01ece9" style="width: 100.0%; height: 100.0%;"><b>District:</b> Davanagere<br><b>Predicted Risk:</b> High Risk<br><b>Historical Crimes:</b> 12159</div>`)[0];
+                popup_ddd8bce03e6c6fdd928dbfd2570d1330.setContent(html_726dc58679611bbc1669b6fd8b01ece9);
+            
+        
+
+        circle_marker_98bed13ac90a62ee1f592b0c655afc20.bindPopup(popup_ddd8bce03e6c6fdd928dbfd2570d1330)
+        ;
+
+        
+    
+    
+            var circle_marker_7afdd62667b06090919d0476fb9f7e69 = L.circleMarker(
+                [15.380370785177929, 75.11353256594842],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_feda330625347197975344e01352fa44 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_98d48146e789a64a9a006e85f975effc = $(`<div id="html_98d48146e789a64a9a006e85f975effc" style="width: 100.0%; height: 100.0%;"><b>District:</b> Dharwad<br><b>Predicted Risk:</b> Medium Risk<br><b>Historical Crimes:</b> 6126</div>`)[0];
+                popup_feda330625347197975344e01352fa44.setContent(html_98d48146e789a64a9a006e85f975effc);
+            
+        
+
+        circle_marker_7afdd62667b06090919d0476fb9f7e69.bindPopup(popup_feda330625347197975344e01352fa44)
+        ;
+
+        
+    
+    
+            var circle_marker_c1b1a61acc8effdfd34def3458f7a0f9 = L.circleMarker(
+                [15.445558773072214, 75.65176107778457],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_f2053a15085a615baa97795c40da8543 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_62fcc71226ac429ed9ae57b8d858e5ba = $(`<div id="html_62fcc71226ac429ed9ae57b8d858e5ba" style="width: 100.0%; height: 100.0%;"><b>District:</b> Gadag<br><b>Predicted Risk:</b> Medium Risk<br><b>Historical Crimes:</b> 8170</div>`)[0];
+                popup_f2053a15085a615baa97795c40da8543.setContent(html_62fcc71226ac429ed9ae57b8d858e5ba);
+            
+        
+
+        circle_marker_c1b1a61acc8effdfd34def3458f7a0f9.bindPopup(popup_f2053a15085a615baa97795c40da8543)
+        ;
+
+        
+    
+    
+            var circle_marker_5ff1fa4f98b523f9d5205db8deb5a6e0 = L.circleMarker(
+                [12.962522235233415, 76.17433534452346],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_6d1c3e6bf1e7f4693b4bbb5c5ef54a8b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_503a526a07412fce7b8ac18b1afa2b34 = $(`<div id="html_503a526a07412fce7b8ac18b1afa2b34" style="width: 100.0%; height: 100.0%;"><b>District:</b> Hassan<br><b>Predicted Risk:</b> Medium Risk<br><b>Historical Crimes:</b> 8661</div>`)[0];
+                popup_6d1c3e6bf1e7f4693b4bbb5c5ef54a8b.setContent(html_503a526a07412fce7b8ac18b1afa2b34);
+            
+        
+
+        circle_marker_5ff1fa4f98b523f9d5205db8deb5a6e0.bindPopup(popup_6d1c3e6bf1e7f4693b4bbb5c5ef54a8b)
+        ;
+
+        
+    
+    
+            var circle_marker_2f2c07844ec4a87f22844a552ae413af = L.circleMarker(
+                [14.71991652743095, 75.4114294357296],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_059b15a81be5e45cdd2e4d5a0666b7f6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_24fb321950b9b9f8e59a88f61986dee8 = $(`<div id="html_24fb321950b9b9f8e59a88f61986dee8" style="width: 100.0%; height: 100.0%;"><b>District:</b> Haveri<br><b>Predicted Risk:</b> Medium Risk<br><b>Historical Crimes:</b> 7929</div>`)[0];
+                popup_059b15a81be5e45cdd2e4d5a0666b7f6.setContent(html_24fb321950b9b9f8e59a88f61986dee8);
+            
+        
+
+        circle_marker_2f2c07844ec4a87f22844a552ae413af.bindPopup(popup_059b15a81be5e45cdd2e4d5a0666b7f6)
+        ;
+
+        
+    
+    
+            var circle_marker_29e21576a9353944392dedf1e6152eb2 = L.circleMarker(
+                [15.381523919955162, 75.09484987349997],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_69be0d8c98e35a093446f8d387bfe51c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83803f2a6661f0ad495a7afe0d8c391a = $(`<div id="html_83803f2a6661f0ad495a7afe0d8c391a" style="width: 100.0%; height: 100.0%;"><b>District:</b> Hubballi Dharwad City<br><b>Predicted Risk:</b> High Risk<br><b>Historical Crimes:</b> 10877</div>`)[0];
+                popup_69be0d8c98e35a093446f8d387bfe51c.setContent(html_83803f2a6661f0ad495a7afe0d8c391a);
+            
+        
+
+        circle_marker_29e21576a9353944392dedf1e6152eb2.bindPopup(popup_69be0d8c98e35a093446f8d387bfe51c)
+        ;
+
+        
+    
+    
+            var circle_marker_fac78158ca01f9698155312a8ee4ec06 = L.circleMarker(
+                [12.954729261004012, 78.22090545469172],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_c2c4fd08c3becbbe0d50318d3219dec5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_748f75c66178740677a066998ff498af = $(`<div id="html_748f75c66178740677a066998ff498af" style="width: 100.0%; height: 100.0%;"><b>District:</b> K.G.F<br><b>Predicted Risk:</b> Low Risk<br><b>Historical Crimes:</b> 2897</div>`)[0];
+                popup_c2c4fd08c3becbbe0d50318d3219dec5.setContent(html_748f75c66178740677a066998ff498af);
+            
+        
+
+        circle_marker_fac78158ca01f9698155312a8ee4ec06.bindPopup(popup_c2c4fd08c3becbbe0d50318d3219dec5)
+        ;
+
+        
+    
+    
+            var circle_marker_a6acf5275b41ceba13ef2ef6198cfadd = L.circleMarker(
+                [17.25176068374269, 76.88610877260234],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_83f375de5dfd322b1048d96e12c484aa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1e6ea43b66474b4dc9d1cfee80203136 = $(`<div id="html_1e6ea43b66474b4dc9d1cfee80203136" style="width: 100.0%; height: 100.0%;"><b>District:</b> Kalaburagi<br><b>Predicted Risk:</b> Low Risk<br><b>Historical Crimes:</b> 3420</div>`)[0];
+                popup_83f375de5dfd322b1048d96e12c484aa.setContent(html_1e6ea43b66474b4dc9d1cfee80203136);
+            
+        
+
+        circle_marker_a6acf5275b41ceba13ef2ef6198cfadd.bindPopup(popup_83f375de5dfd322b1048d96e12c484aa)
+        ;
+
+        
+    
+    
+            var circle_marker_798929f9674fdb8098e03e401df7d3af = L.circleMarker(
+                [17.326965716302816, 76.82456982378625],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_667af8d729a3f4637afbe173900dbb39 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f54f4feddb66695febbf38538ca7e7cd = $(`<div id="html_f54f4feddb66695febbf38538ca7e7cd" style="width: 100.0%; height: 100.0%;"><b>District:</b> Kalaburagi City<br><b>Predicted Risk:</b> Medium Risk<br><b>Historical Crimes:</b> 9207</div>`)[0];
+                popup_667af8d729a3f4637afbe173900dbb39.setContent(html_f54f4feddb66695febbf38538ca7e7cd);
+            
+        
+
+        circle_marker_798929f9674fdb8098e03e401df7d3af.bindPopup(popup_667af8d729a3f4637afbe173900dbb39)
+        ;
+
+        
+    
+    
+            var circle_marker_fe069cd32275e4784a29580d4d755477 = L.circleMarker(
+                [14.416004545194838, 76.74360109424275],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_51fe578f6690de041e5f48a73f6bd040 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_63ef42bf97c764c8d80577ab26c1e1a9 = $(`<div id="html_63ef42bf97c764c8d80577ab26c1e1a9" style="width: 100.0%; height: 100.0%;"><b>District:</b> Karnataka Railways<br><b>Predicted Risk:</b> Low Risk<br><b>Historical Crimes:</b> 2340</div>`)[0];
+                popup_51fe578f6690de041e5f48a73f6bd040.setContent(html_63ef42bf97c764c8d80577ab26c1e1a9);
+            
+        
+
+        circle_marker_fe069cd32275e4784a29580d4d755477.bindPopup(popup_51fe578f6690de041e5f48a73f6bd040)
+        ;
+
+        
+    
+    
+            var circle_marker_8934ac080643501c6ea0c9a7cd9a7d40 = L.circleMarker(
+                [12.36852489306595, 75.83703231711623],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_00a07182e04e86ccdefcb4af710a66c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8952db85069b44bc7a3e8c7a718a986f = $(`<div id="html_8952db85069b44bc7a3e8c7a718a986f" style="width: 100.0%; height: 100.0%;"><b>District:</b> Kodagu<br><b>Predicted Risk:</b> Medium Risk<br><b>Historical Crimes:</b> 7081</div>`)[0];
+                popup_00a07182e04e86ccdefcb4af710a66c3.setContent(html_8952db85069b44bc7a3e8c7a718a986f);
+            
+        
+
+        circle_marker_8934ac080643501c6ea0c9a7cd9a7d40.bindPopup(popup_00a07182e04e86ccdefcb4af710a66c3)
+        ;
+
+        
+    
+    
+            var circle_marker_7d97551195483e77de60da0407859db0 = L.circleMarker(
+                [13.10800249281328, 78.02501445081018],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_0173978a6c3a2485dcccd9ab4fc28ec7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1257c0ffe096c8c2a9d156f33b2d5cbd = $(`<div id="html_1257c0ffe096c8c2a9d156f33b2d5cbd" style="width: 100.0%; height: 100.0%;"><b>District:</b> Kolar<br><b>Predicted Risk:</b> Low Risk<br><b>Historical Crimes:</b> 2311</div>`)[0];
+                popup_0173978a6c3a2485dcccd9ab4fc28ec7.setContent(html_1257c0ffe096c8c2a9d156f33b2d5cbd);
+            
+        
+
+        circle_marker_7d97551195483e77de60da0407859db0.bindPopup(popup_0173978a6c3a2485dcccd9ab4fc28ec7)
+        ;
+
+        
+    
+    
+            var circle_marker_10e38233f36e6aebe5872eb7548e0dfb = L.circleMarker(
+                [15.513959274567927, 76.29681564644096],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_56d38d2664033ed9793b4da347e9a6b2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d5aff8d19556e52668a33fda85ba482 = $(`<div id="html_7d5aff8d19556e52668a33fda85ba482" style="width: 100.0%; height: 100.0%;"><b>District:</b> Koppal<br><b>Predicted Risk:</b> Medium Risk<br><b>Historical Crimes:</b> 9629</div>`)[0];
+                popup_56d38d2664033ed9793b4da347e9a6b2.setContent(html_7d5aff8d19556e52668a33fda85ba482);
+            
+        
+
+        circle_marker_10e38233f36e6aebe5872eb7548e0dfb.bindPopup(popup_56d38d2664033ed9793b4da347e9a6b2)
+        ;
+
+        
+    
+    
+            var circle_marker_6f7f03d9d390d90860c745f49a88330e = L.circleMarker(
+                [12.555673024372659, 76.79319793418388],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_69de632357002894b4139cd7d72a6811 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f6bc90bfe578a2bcf31326031cf06741 = $(`<div id="html_f6bc90bfe578a2bcf31326031cf06741" style="width: 100.0%; height: 100.0%;"><b>District:</b> Mandya<br><b>Predicted Risk:</b> Low Risk<br><b>Historical Crimes:</b> 3980</div>`)[0];
+                popup_69de632357002894b4139cd7d72a6811.setContent(html_f6bc90bfe578a2bcf31326031cf06741);
+            
+        
+
+        circle_marker_6f7f03d9d390d90860c745f49a88330e.bindPopup(popup_69de632357002894b4139cd7d72a6811)
+        ;
+
+        
+    
+    
+            var circle_marker_6c2567aa04ed76042a821fca63a3ec9e = L.circleMarker(
+                [12.915105832016728, 74.86854632973129],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_00132a1ec32d638999af42453a41a810 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_926ba6b8640e919633693dc34ea82d34 = $(`<div id="html_926ba6b8640e919633693dc34ea82d34" style="width: 100.0%; height: 100.0%;"><b>District:</b> Mangaluru City<br><b>Predicted Risk:</b> High Risk<br><b>Historical Crimes:</b> 10943</div>`)[0];
+                popup_00132a1ec32d638999af42453a41a810.setContent(html_926ba6b8640e919633693dc34ea82d34);
+            
+        
+
+        circle_marker_6c2567aa04ed76042a821fca63a3ec9e.bindPopup(popup_00132a1ec32d638999af42453a41a810)
+        ;
+
+        
+    
+    
+            var circle_marker_ccfa9d219ed2e60452b603e7f82c025e = L.circleMarker(
+                [12.314114158309712, 76.63195371957545],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_2707724e7d4e4cbf2be79af483994297 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8c99b301f309d807be2c1a9ff02d3e70 = $(`<div id="html_8c99b301f309d807be2c1a9ff02d3e70" style="width: 100.0%; height: 100.0%;"><b>District:</b> Mysuru City<br><b>Predicted Risk:</b> High Risk<br><b>Historical Crimes:</b> 9803</div>`)[0];
+                popup_2707724e7d4e4cbf2be79af483994297.setContent(html_8c99b301f309d807be2c1a9ff02d3e70);
+            
+        
+
+        circle_marker_ccfa9d219ed2e60452b603e7f82c025e.bindPopup(popup_2707724e7d4e4cbf2be79af483994297)
+        ;
+
+        
+    
+    
+            var circle_marker_01d53615a05c467e6f4e108beb2bcb31 = L.circleMarker(
+                [12.292608248206792, 76.44073066586454],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_c9524aa507f67b0c5b107d956de61d11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2b57978cbebdb4df85cc9a02abb4355d = $(`<div id="html_2b57978cbebdb4df85cc9a02abb4355d" style="width: 100.0%; height: 100.0%;"><b>District:</b> Mysuru Dist<br><b>Predicted Risk:</b> Medium Risk<br><b>Historical Crimes:</b> 8029</div>`)[0];
+                popup_c9524aa507f67b0c5b107d956de61d11.setContent(html_2b57978cbebdb4df85cc9a02abb4355d);
+            
+        
+
+        circle_marker_01d53615a05c467e6f4e108beb2bcb31.bindPopup(popup_c9524aa507f67b0c5b107d956de61d11)
+        ;
+
+        
+    
+    
+            var circle_marker_68b7398e037103a9dd9cd8d399342185 = L.circleMarker(
+                [16.09788031643779, 76.91539046633402],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_5e01097dd69020241e5e53dd2cfd7bf9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50a3e9c0a5a133aefb06afc271875851 = $(`<div id="html_50a3e9c0a5a133aefb06afc271875851" style="width: 100.0%; height: 100.0%;"><b>District:</b> Raichur<br><b>Predicted Risk:</b> Medium Risk<br><b>Historical Crimes:</b> 8740</div>`)[0];
+                popup_5e01097dd69020241e5e53dd2cfd7bf9.setContent(html_50a3e9c0a5a133aefb06afc271875851);
+            
+        
+
+        circle_marker_68b7398e037103a9dd9cd8d399342185.bindPopup(popup_5e01097dd69020241e5e53dd2cfd7bf9)
+        ;
+
+        
+    
+    
+            var circle_marker_ffe7aaa9457ef3e4510ca05b01fa8c8f = L.circleMarker(
+                [12.709562892082015, 77.29197218014008],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_3d0cdc3ce76c1934426f65be592bffeb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f22f7d39b6b754d089aba67a4370c37b = $(`<div id="html_f22f7d39b6b754d089aba67a4370c37b" style="width: 100.0%; height: 100.0%;"><b>District:</b> Ramanagara<br><b>Predicted Risk:</b> Low Risk<br><b>Historical Crimes:</b> 4098</div>`)[0];
+                popup_3d0cdc3ce76c1934426f65be592bffeb.setContent(html_f22f7d39b6b754d089aba67a4370c37b);
+            
+        
+
+        circle_marker_ffe7aaa9457ef3e4510ca05b01fa8c8f.bindPopup(popup_3d0cdc3ce76c1934426f65be592bffeb)
+        ;
+
+        
+    
+    
+            var circle_marker_8374129b6a3c1bd69acb6a7d654a0361 = L.circleMarker(
+                [13.972089271771685, 75.43406392940597],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_d0a2ec97f8390ff7d2f85465ff5b7e41 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4239b42dfaa14f00be4d6e3c11ee8f36 = $(`<div id="html_4239b42dfaa14f00be4d6e3c11ee8f36" style="width: 100.0%; height: 100.0%;"><b>District:</b> Shivamogga<br><b>Predicted Risk:</b> High Risk<br><b>Historical Crimes:</b> 11229</div>`)[0];
+                popup_d0a2ec97f8390ff7d2f85465ff5b7e41.setContent(html_4239b42dfaa14f00be4d6e3c11ee8f36);
+            
+        
+
+        circle_marker_8374129b6a3c1bd69acb6a7d654a0361.bindPopup(popup_d0a2ec97f8390ff7d2f85465ff5b7e41)
+        ;
+
+        
+    
+    
+            var circle_marker_6350e07ded407051170011b69fbf73fb = L.circleMarker(
+                [13.414511659075051, 76.95909930872546],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_65c60498a9b63aac8b5450cb9a16b9ba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ea486c9f405346178c7127cd98fcae76 = $(`<div id="html_ea486c9f405346178c7127cd98fcae76" style="width: 100.0%; height: 100.0%;"><b>District:</b> Tumakuru<br><b>Predicted Risk:</b> High Risk<br><b>Historical Crimes:</b> 28464</div>`)[0];
+                popup_65c60498a9b63aac8b5450cb9a16b9ba.setContent(html_ea486c9f405346178c7127cd98fcae76);
+            
+        
+
+        circle_marker_6350e07ded407051170011b69fbf73fb.bindPopup(popup_65c60498a9b63aac8b5450cb9a16b9ba)
+        ;
+
+        
+    
+    
+            var circle_marker_caf8de5c0d12db55ea6f41f1403e25dc = L.circleMarker(
+                [13.45268009103879, 74.78076946478653],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_b9e6e016a6106a3bd9d6eb25fe8576f4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2433547596d17cb6e3030121c3390619 = $(`<div id="html_2433547596d17cb6e3030121c3390619" style="width: 100.0%; height: 100.0%;"><b>District:</b> Udupi<br><b>Predicted Risk:</b> High Risk<br><b>Historical Crimes:</b> 11788</div>`)[0];
+                popup_b9e6e016a6106a3bd9d6eb25fe8576f4.setContent(html_2433547596d17cb6e3030121c3390619);
+            
+        
+
+        circle_marker_caf8de5c0d12db55ea6f41f1403e25dc.bindPopup(popup_b9e6e016a6106a3bd9d6eb25fe8576f4)
+        ;
+
+        
+    
+    
+            var circle_marker_42978a01c349133ee7fc0315b9f5c16e = L.circleMarker(
+                [14.829817444452766, 74.82264627547514],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_873f70358e9a2196c7fa92776242f905 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2104ce4257748dd8f49d3284f018e59a = $(`<div id="html_2104ce4257748dd8f49d3284f018e59a" style="width: 100.0%; height: 100.0%;"><b>District:</b> Uttara Kannada<br><b>Predicted Risk:</b> Medium Risk<br><b>Historical Crimes:</b> 5794</div>`)[0];
+                popup_873f70358e9a2196c7fa92776242f905.setContent(html_2104ce4257748dd8f49d3284f018e59a);
+            
+        
+
+        circle_marker_42978a01c349133ee7fc0315b9f5c16e.bindPopup(popup_873f70358e9a2196c7fa92776242f905)
+        ;
+
+        
+    
+    
+            var circle_marker_1b13630148326997a9f436f69723107f = L.circleMarker(
+                [14.932054390729792, 76.14746963951676],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_8186c979f158f4a038e95f34164e62c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_36cd3320eff3a780dd3ef2328a8ad986 = $(`<div id="html_36cd3320eff3a780dd3ef2328a8ad986" style="width: 100.0%; height: 100.0%;"><b>District:</b> Vijayanagara<br><b>Predicted Risk:</b> Low Risk<br><b>Historical Crimes:</b> 2599</div>`)[0];
+                popup_8186c979f158f4a038e95f34164e62c6.setContent(html_36cd3320eff3a780dd3ef2328a8ad986);
+            
+        
+
+        circle_marker_1b13630148326997a9f436f69723107f.bindPopup(popup_8186c979f158f4a038e95f34164e62c6)
+        ;
+
+        
+    
+    
+            var circle_marker_82674cc47400c637218a1a32311da283 = L.circleMarker(
+                [16.80937476514156, 75.8965182028627],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_b5ed19959d5738b53a7e4e929d4dadd2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8c9d2f3631378b5d1667e56c95fa0deb = $(`<div id="html_8c9d2f3631378b5d1667e56c95fa0deb" style="width: 100.0%; height: 100.0%;"><b>District:</b> Vijayapur<br><b>Predicted Risk:</b> High Risk<br><b>Historical Crimes:</b> 16952</div>`)[0];
+                popup_b5ed19959d5738b53a7e4e929d4dadd2.setContent(html_8c9d2f3631378b5d1667e56c95fa0deb);
+            
+        
+
+        circle_marker_82674cc47400c637218a1a32311da283.bindPopup(popup_b5ed19959d5738b53a7e4e929d4dadd2)
+        ;
+
+        
+    
+    
+            var circle_marker_97ae0293965a074df7be333e81e389fc = L.circleMarker(
+                [16.638398434167698, 76.9125402450996],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_b63cc4085bdf89fdce01a0fae7e31002);
+        
+    
+        var popup_55ec56fdc305c069181e0272700c774f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92c1e3bc9dc9fc03541dd431c79e9399 = $(`<div id="html_92c1e3bc9dc9fc03541dd431c79e9399" style="width: 100.0%; height: 100.0%;"><b>District:</b> Yadgir<br><b>Predicted Risk:</b> Low Risk<br><b>Historical Crimes:</b> 4700</div>`)[0];
+                popup_55ec56fdc305c069181e0272700c774f.setContent(html_92c1e3bc9dc9fc03541dd431c79e9399);
+            
+        
+
+        circle_marker_97ae0293965a074df7be333e81e389fc.bindPopup(popup_55ec56fdc305c069181e0272700c774f)
+        ;
+
+        
+    
+</script>
+</html>
