@@ -1,168 +1,329 @@
-import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { Shield, Lock, User, Fingerprint, KeyRound } from "lucide-react";
-import { Btn, Chip } from "@/components/crimevista/ui";
+import {
+  Eye,
+  EyeOff,
+  Lock,
+  Shield,
+  User,
+} from "lucide-react";
+
+import kspLogo from "@/assets/ksp-logo.png";
+import vidhanaSoudha from "@/assets/vidhana-soudha.png";
 
 export const Route = createFileRoute("/login")({
   component: LoginPage,
-  head: () => ({
-    meta: [
-      { title: "Sign in — CrimeVista" },
-      { name: "description", content: "Secure sign-in to the Karnataka Police AI Crime Intelligence Platform." },
-    ],
-  }),
 });
 
 function LoginPage() {
   const navigate = useNavigate();
+
+  const [officerId, setOfficerId] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [remember, setRemember] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState("");
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setError("");
+
+    setTimeout(() => {
+      if (
+        officerId.toUpperCase() === "SPVIJAY" &&
+        password === "crimevista123"
+      ) {
+        navigate({ to: "/" });
+      } else {
+        setLoading(false);
+        setError("Invalid Officer ID or Password");
+      }
+    }, 800);
+  };
 
   return (
-    <div className="min-h-screen grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] bg-background text-foreground">
-      {/* Left brand panel */}
-      <div className="hidden lg:flex relative flex-col justify-between p-10 bg-gradient-to-br from-[oklch(0.18_0.04_255)] via-[oklch(0.22_0.05_258)] to-[oklch(0.28_0.05_258)] overflow-hidden">
-        <div className="absolute inset-0 opacity-30 pointer-events-none">
-          <svg viewBox="0 0 400 400" className="w-full h-full">
-            <defs>
-              <radialGradient id="lg1">
-                <stop offset="0%" stopColor="var(--color-gold)" stopOpacity="0.5" />
-                <stop offset="100%" stopColor="var(--color-gold)" stopOpacity="0" />
-              </radialGradient>
-            </defs>
-            <circle cx="120" cy="120" r="120" fill="url(#lg1)" />
-            <circle cx="320" cy="320" r="140" fill="url(#lg1)" />
-          </svg>
-        </div>
-        <div className="relative flex items-center gap-3">
-          <div className="w-12 h-12 rounded-lg gold-chip flex items-center justify-center font-bold text-lg font-mono">CV</div>
-          <div>
-            <div className="font-bold text-[19px] leading-tight">CrimeVista</div>
-            <div className="text-[11px] uppercase tracking-wider text-secondary">Government of Karnataka</div>
+    <div className="min-h-screen grid lg:grid-cols-2 bg-background">
+
+      {/* LEFT */}
+
+      <div className="hidden lg:flex flex-col justify-between bg-sidebar relative overflow-hidden p-12">
+
+        <div className="absolute inset-0 bg-gradient-to-br from-[#08172B] via-[#10294D] to-[#0B1F3A]" />
+
+        <div className="relative z-10">
+
+          <div className="flex items-center gap-5">
+
+            <img
+              src={kspLogo}
+              alt="Karnataka Police"
+              className="w-20 h-20 object-contain"
+            />
+
+            <div>
+
+              <h1 className="text-5xl font-black">
+
+                <span className="text-white">
+                  Crime
+                </span>
+
+                <span className="text-primary">
+                  Vista
+                </span>
+
+              </h1>
+
+              <p className="uppercase tracking-[0.3em] text-secondary text-sm mt-2">
+                AI Crime Intelligence Platform
+              </p>
+
+              <p className="text-secondary text-sm">
+                Government of Karnataka
+              </p>
+
+            </div>
+
           </div>
-        </div>
-        <div className="relative space-y-4 max-w-md">
-          <Chip tone="gold">Official · Karnataka State Police</Chip>
-          <h2 className="text-3xl font-bold leading-tight">AI Crime Intelligence — command center</h2>
-          <p className="text-[13.5px] text-secondary">
-            Real-time FIR intelligence, predictive analytics, geographic hotspots and relationship graphs — unified for every district.
-          </p>
-          <div className="grid grid-cols-3 gap-3 pt-4">
-            {[["18,472", "FIRs today"], ["30", "Districts"], ["92.4%", "AI accuracy"]].map(([v, l]) => (
-              <div key={l} className="panel-inset px-3 py-3">
-                <div className="text-primary text-[20px] font-mono font-bold">{v}</div>
-                <div className="text-[10.5px] uppercase tracking-wider text-secondary mt-0.5">{l}</div>
+
+          <div className="mt-20">
+
+            <h2 className="text-4xl font-bold text-white leading-tight">
+
+              Secure.
+              <br />
+              Intelligent.
+              <br />
+              Effective.
+
+            </h2>
+
+            <p className="mt-6 text-secondary text-lg leading-8">
+
+              Empowering Karnataka State Police with AI-powered
+              crime analytics, hotspot detection, predictive
+              policing and criminal relationship intelligence.
+
+            </p>
+
+            <div className="mt-10 rounded-xl border border-white/10 bg-white/5 p-5">
+
+              <div className="flex items-center gap-3">
+
+                <Shield className="text-primary w-6 h-6" />
+
+                <div>
+
+                  <h3 className="font-semibold text-white">
+                    State Crime Records Bureau
+                  </h3>
+
+                  <p className="text-secondary text-sm mt-1">
+                    Unified AI Crime Intelligence Platform
+                  </p>
+
+                </div>
+
               </div>
-            ))}
+
+            </div>
+
           </div>
+
         </div>
-        <div className="relative text-[11px] text-secondary flex items-center gap-2">
-          <Shield className="w-3.5 h-3.5 text-primary" />
-          Secure · TLS 1.3 · Audit-logged · v2.4.1
+
+        <div className="relative z-10">
+
+          <img
+            src={vidhanaSoudha}
+            alt="Vidhana Soudha"
+            className="w-[80%] mx-auto opacity-20"
+          />
+
+          <div className="border-t border-white/10 mt-6 pt-5 flex justify-between text-sm text-secondary">
+
+            <span>Karnataka State Police</span>
+
+            <span>CrimeVista v2.0</span>
+
+          </div>
+
         </div>
+
       </div>
 
-      {/* Right auth form */}
-      <div className="flex items-center justify-center p-6 sm:p-10">
+      {/* RIGHT */}
+
+      <div className="flex items-center justify-center p-8">
+
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setError(null);
-            setLoading(true);
-            setTimeout(() => {
-              setLoading(false);
-              navigate({ to: "/" });
-            }, 700);
-          }}
-          className="w-full max-w-md space-y-5"
-        >
-          <div className="lg:hidden flex items-center gap-3">
-            <div className="w-11 h-11 rounded-lg gold-chip flex items-center justify-center font-bold font-mono">CV</div>
-            <div>
-              <div className="font-bold text-[17px] leading-tight">CrimeVista</div>
-              <div className="text-[10.5px] uppercase tracking-wider text-secondary">Karnataka Police</div>
+          onSubmit={handleLogin}
+          className="w-full max-w-md bg-card rounded-2xl border border-border p-8 shadow-xl space-y-6"
+        >          <div className="text-center">
+
+            <div className="lg:hidden flex justify-center mb-5">
+
+              <img
+                src={kspLogo}
+                alt="KSP"
+                className="w-16 h-16 object-contain"
+              />
+
             </div>
+
+            <h2 className="text-3xl font-bold">
+              Officer Login
+            </h2>
+
+            <p className="text-secondary mt-2">
+              Welcome back. Sign in to continue.
+            </p>
+
           </div>
+
+          {error && (
+            <div className="rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 p-3 text-sm">
+              {error}
+            </div>
+          )}
+
+          {/* Officer ID */}
 
           <div>
-            <h1 className="text-2xl font-bold tracking-tight">Sign in to CrimeVista</h1>
-            <p className="text-[12.5px] text-secondary mt-1">
-              Use your official Karnataka Police credentials.
-            </p>
+
+            <label className="block mb-2 text-sm font-medium">
+              Officer ID
+            </label>
+
+            <div className="relative">
+
+              <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary" />
+
+              <input
+                required
+                value={officerId}
+                onChange={(e) => setOfficerId(e.target.value)}
+                placeholder="SPVIJAY"
+                className="w-full h-12 rounded-lg border border-border bg-background pl-11 pr-4 outline-none focus:border-primary"
+              />
+
+            </div>
+
           </div>
 
-          {error && <div className="panel-inset border-destructive/40 text-destructive px-3 py-2 text-[12px]">{error}</div>}
+          {/* Password */}
 
-          <div className="space-y-3">
-            <label className="block">
-              <span className="text-[11px] uppercase tracking-wider text-secondary font-semibold">Officer ID / Email</span>
-              <div className="relative mt-1.5">
-                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary" />
-                <input
-                  required
-                  defaultValue="vijay.kumar@ksp.gov.in"
-                  className="w-full panel-inset pl-9 pr-3 h-11 text-[13px] rounded-md focus:outline-none focus:ring-1 focus:ring-primary/60"
-                />
-              </div>
+          <div>
+
+            <label className="block mb-2 text-sm font-medium">
+              Password
             </label>
 
-            <label className="block">
-              <span className="text-[11px] uppercase tracking-wider text-secondary font-semibold">Password</span>
-              <div className="relative mt-1.5">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary" />
-                <input
-                  required
-                  type="password"
-                  defaultValue="••••••••"
-                  className="w-full panel-inset pl-9 pr-3 h-11 text-[13px] rounded-md focus:outline-none focus:ring-1 focus:ring-primary/60"
-                />
-              </div>
-            </label>
+            <div className="relative">
 
-            <label className="block">
-              <span className="text-[11px] uppercase tracking-wider text-secondary font-semibold">2FA Code</span>
-              <div className="relative mt-1.5">
-                <KeyRound className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-secondary" />
-                <input
-                  required
-                  inputMode="numeric"
-                  placeholder="6-digit code"
-                  className="w-full panel-inset pl-9 pr-3 h-11 text-[13px] font-mono tracking-widest rounded-md focus:outline-none focus:ring-1 focus:ring-primary/60"
-                />
-              </div>
-            </label>
+              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary" />
+
+              <input
+                required
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter Password"
+                className="w-full h-12 rounded-lg border border-border bg-background pl-11 pr-12 outline-none focus:border-primary"
+              />
+
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2"
+              >
+                {showPassword ? (
+                  <EyeOff className="w-5 h-5 text-secondary" />
+                ) : (
+                  <Eye className="w-5 h-5 text-secondary" />
+                )}
+              </button>
+
+            </div>
+
           </div>
 
-          <div className="flex items-center justify-between text-[12px]">
-            <label className="flex items-center gap-2 text-secondary">
-              <input type="checkbox" className="accent-[var(--color-gold)]" /> Keep me signed in
+          <div className="flex items-center justify-between text-sm">
+
+            <label className="flex items-center gap-2">
+
+              <input
+                type="checkbox"
+                checked={remember}
+                onChange={(e) => setRemember(e.target.checked)}
+                className="accent-yellow-500"
+              />
+
+              Remember Me
+
             </label>
-            <a href="#" className="text-primary hover:brightness-110">Forgot password?</a>
-          </div>
 
-          <Btn type="submit" className="w-full justify-center h-11">
-            {loading ? "Signing in..." : "Sign in securely"}
-          </Btn>
+            <button
+              type="button"
+              className="text-primary hover:underline"
+            >
+              Forgot Password?
+            </button>
 
-          <div className="flex items-center gap-2 text-[11px] text-secondary">
-            <span className="flex-1 border-t hairline" />
-            or
-            <span className="flex-1 border-t hairline" />
           </div>
 
           <button
-            type="button"
-            className="w-full panel-inset h-11 rounded-md text-[13px] font-semibold flex items-center justify-center gap-2 hover:text-primary hover:border-primary/40"
+            type="submit"
+            disabled={loading}
+            className="w-full h-12 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition disabled:opacity-50"
           >
-            <Fingerprint className="w-4 h-4" /> Continue with Aadhaar eKYC
+            {loading ? "Signing In..." : "Sign In"}
           </button>
 
-          <p className="text-[11px] text-secondary text-center">
-            Unauthorized access is a punishable offence under IT Act §66.<br />
-            <Link to="/" className="text-primary hover:brightness-110">Back to public site</Link>
+          <div className="rounded-lg border border-border p-4 bg-secondary/20">
+
+            <h3 className="font-semibold text-primary mb-3">
+              Demo Credentials
+            </h3>
+
+            <div className="flex justify-between text-sm">
+
+              <span>Officer ID</span>
+
+              <span className="font-mono">
+                SPVIJAY
+              </span>
+
+            </div>
+
+            <div className="flex justify-between text-sm mt-2">
+
+              <span>Password</span>
+
+              <span className="font-mono">
+                crimevista123
+              </span>
+
+            </div>
+
+          </div>
+
+          <p className="text-center text-xs text-secondary">
+
+            Karnataka State Police
+            <br />
+            State Crime Records Bureau
+
           </p>
+
         </form>
+
       </div>
+
     </div>
+
   );
 }

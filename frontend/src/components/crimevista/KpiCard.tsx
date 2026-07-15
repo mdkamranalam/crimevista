@@ -1,4 +1,4 @@
-import { type LucideIcon, TrendingUp, TrendingDown } from "lucide-react";
+import { type LucideIcon, TrendingDown, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface KpiCardProps {
@@ -12,11 +12,11 @@ export interface KpiCardProps {
 }
 
 const TONE: Record<NonNullable<KpiCardProps["tone"]>, string> = {
-  gold: "text-primary bg-primary/12 border-primary/30",
-  info: "text-info bg-info/12 border-info/30",
-  danger: "text-destructive bg-destructive/15 border-destructive/40",
-  success: "text-success bg-success/12 border-success/30",
-  warning: "text-warning bg-warning/12 border-warning/30",
+  gold: "text-primary bg-primary/10 border-primary/30",
+  info: "text-info bg-info/10 border-info/30",
+  danger: "text-destructive bg-destructive/10 border-destructive/30",
+  success: "text-success bg-success/10 border-success/30",
+  warning: "text-warning bg-warning/10 border-warning/30",
 };
 
 export function KpiCard({
@@ -29,43 +29,49 @@ export function KpiCard({
   tone = "gold",
 }: KpiCardProps) {
   return (
-    <div className="panel px-5 py-4 group hover:-translate-y-0.5 hover:border-primary/40 transition-all duration-200">
+    <div className="panel px-6 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl">
       <div className="flex items-start justify-between">
         <div
           className={cn(
-            "w-11 h-11 rounded-lg border flex items-center justify-center",
-            TONE[tone],
+            "flex h-12 w-12 items-center justify-center rounded-xl border",
+            TONE[tone]
           )}
         >
-          <Icon className="w-5 h-5" />
+          <Icon className="h-5 w-5" />
         </div>
+
         {delta && (
           <span
             className={cn(
-              "flex items-center gap-1 text-[11px] font-mono font-semibold px-1.5 py-0.5 rounded",
+              "flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold",
               trend === "up"
-                ? "text-success bg-success/12"
-                : "text-destructive bg-destructive/12",
+                ? "bg-success/15 text-success"
+                : "bg-destructive/15 text-destructive"
             )}
           >
             {trend === "up" ? (
-              <TrendingUp className="w-3 h-3" />
+              <TrendingUp className="h-3.5 w-3.5" />
             ) : (
-              <TrendingDown className="w-3 h-3" />
+              <TrendingDown className="h-3.5 w-3.5" />
             )}
             {delta}
           </span>
         )}
       </div>
-      <div className="mt-3.5">
-        <div className="text-[11.5px] uppercase tracking-wider text-secondary font-medium">
+
+      <div className="mt-6">
+        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-slate-200">
           {label}
-        </div>
-        <div className="mt-1 text-[28px] leading-none font-mono font-bold tracking-tight">
+        </p>
+
+        <h2 className="mt-3 text-[42px] font-black leading-none tracking-tight text-white">
           {value}
-        </div>
+        </h2>
+
         {hint && (
-          <div className="text-[11px] text-secondary mt-1.5">{hint}</div>
+          <p className="mt-3 text-sm leading-relaxed text-slate-300">
+            {hint}
+          </p>
         )}
       </div>
     </div>
