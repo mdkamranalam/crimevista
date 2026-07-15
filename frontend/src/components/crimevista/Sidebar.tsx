@@ -15,8 +15,8 @@ import {
 import { Link, useRouterState } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
-import kspLogo from "@/assets/ksp-logo.png";
-import vidhanaSoudha from "@/assets/vidhana-soudha.png";
+import kspLogo from "../../assets/ksp-logo.png";
+import vidhanaSoudha from "../../assets/vidhana-soudha.png";
 
 type NavItem = {
   icon: typeof LayoutDashboard;
