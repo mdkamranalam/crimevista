@@ -1,7 +1,10 @@
 import os
 import socket
+from pathlib import Path
 from urllib.parse import urlparse
 from pydantic_settings import BaseSettings
+
+BASE_DIR = Path(__file__).resolve().parents[3]
 
 class Settings(BaseSettings):
     PROJECT_NAME: str = "CrimeVista"
@@ -15,8 +18,9 @@ class Settings(BaseSettings):
     )
 
     class Config:
-        env_file = ".env"
+        env_file = str(BASE_DIR / ".env")
         case_sensitive = True
+        extra = "ignore"
 
 settings = Settings()
 
