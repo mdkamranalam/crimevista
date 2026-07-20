@@ -1,0 +1,26 @@
+services:
+  # The unified FastAPI Backend (also runs AI models)
+  - type: web
+    name: crimevista-backend
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: crimevista-db
+          property: connectionString
+
+  # The React/Vite SSR Frontend
+  - type: web
+    name: crimevista-frontend
+    env: node
+    buildCommand: "cd frontend && npm install && npm run build"
+    startCommand: "cd frontend && node .output/server/index.mjs"
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: "https://crimevista-backend.onrender.com/api/v1" # Assumes backend gets this default subdomain
+
+databases:
+  - name: crimevista-db
+    databaseName: crimevista
+    user: crimevista

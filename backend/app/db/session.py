@@ -3,6 +3,12 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 from sqlalchemy.pool import StaticPool
 from app.core.config import settings
 
+from sqlalchemy import create_engine, text
+
+# Handle Render's `postgres://` URLs (SQLAlchemy requires `postgresql://`)
+if settings.DATABASE_URL.startswith("postgres://"):
+    settings.DATABASE_URL = settings.DATABASE_URL.replace("postgres://", "postgresql://", 1)
+
 if settings.DATABASE_URL.startswith("postgresql"):
     try:
         temp_engine = create_engine(
@@ -13,6 +19,12 @@ if settings.DATABASE_URL.startswith("postgresql"):
             connect_args={"connect_timeout": 2}
         )
         with temp_engine.connect() as conn:
+            # Automatically try to enable PostGIS on Render managed DBs
+            try:
+                conn.execute(text("CREATE EXTENSION IF NOT EXISTS postgis;"))
+                conn.commit()
+            except Exception as e:
+                print(f"[INFO] PostGIS extension check: {e}")
             pass
         engine = temp_engine
     except Exception as e:
