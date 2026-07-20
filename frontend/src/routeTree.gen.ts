@@ -15,6 +15,7 @@ import { Route as PredictiveRouteImport } from './routes/predictive'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as HeatmapRouteImport } from './routes/heatmap'
 import { Route as FirRouteImport } from './routes/fir'
+import { Route as DistrictRouteImport } from './routes/district'
 import { Route as CasesRouteImport } from './routes/cases'
 import { Route as AlertsRouteImport } from './routes/alerts'
 import { Route as AdminRouteImport } from './routes/admin'
@@ -50,6 +51,11 @@ const FirRoute = FirRouteImport.update({
   path: '/fir',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DistrictRoute = DistrictRouteImport.update({
+  id: '/district',
+  path: '/district',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CasesRoute = CasesRouteImport.update({
   id: '/cases',
   path: '/cases',
@@ -76,6 +82,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRoute
   '/alerts': typeof AlertsRoute
   '/cases': typeof CasesRoute
+  '/district': typeof DistrictRoute
   '/fir': typeof FirRoute
   '/heatmap': typeof HeatmapRoute
   '/login': typeof LoginRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByTo {
   '/admin': typeof AdminRoute
   '/alerts': typeof AlertsRoute
   '/cases': typeof CasesRoute
+  '/district': typeof DistrictRoute
   '/fir': typeof FirRoute
   '/heatmap': typeof HeatmapRoute
   '/login': typeof LoginRoute
@@ -101,6 +109,7 @@ export interface FileRoutesById {
   '/admin': typeof AdminRoute
   '/alerts': typeof AlertsRoute
   '/cases': typeof CasesRoute
+  '/district': typeof DistrictRoute
   '/fir': typeof FirRoute
   '/heatmap': typeof HeatmapRoute
   '/login': typeof LoginRoute
@@ -115,6 +124,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/alerts'
     | '/cases'
+    | '/district'
     | '/fir'
     | '/heatmap'
     | '/login'
@@ -127,6 +137,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/alerts'
     | '/cases'
+    | '/district'
     | '/fir'
     | '/heatmap'
     | '/login'
@@ -139,6 +150,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/alerts'
     | '/cases'
+    | '/district'
     | '/fir'
     | '/heatmap'
     | '/login'
@@ -152,6 +164,7 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRoute
   AlertsRoute: typeof AlertsRoute
   CasesRoute: typeof CasesRoute
+  DistrictRoute: typeof DistrictRoute
   FirRoute: typeof FirRoute
   HeatmapRoute: typeof HeatmapRoute
   LoginRoute: typeof LoginRoute
@@ -204,6 +217,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FirRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/district': {
+      id: '/district'
+      path: '/district'
+      fullPath: '/district'
+      preLoaderRoute: typeof DistrictRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cases': {
       id: '/cases'
       path: '/cases'
@@ -240,6 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRoute: AdminRoute,
   AlertsRoute: AlertsRoute,
   CasesRoute: CasesRoute,
+  DistrictRoute: DistrictRoute,
   FirRoute: FirRoute,
   HeatmapRoute: HeatmapRoute,
   LoginRoute: LoginRoute,

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { ChevronRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { api, type HotspotItem } from "@/lib/api";
+import { HotspotDetailModal } from "./HotspotDetailModal";
 
 const FALLBACK_HOTSPOTS = [
   { rank: 1, name: "Koramangala, Bengaluru", level: "Very High", tone: "bg-destructive/25 text-destructive" },
@@ -13,6 +14,7 @@ const FALLBACK_HOTSPOTS = [
 
 export function HeatmapPanel() {
   const [hotspots, setHotspots] = useState<Array<{ rank: number; name: string; level: string; tone: string }>>(FALLBACK_HOTSPOTS);
+  const [selectedHotspot, setSelectedHotspot] = useState<any | null>(null);
 
   useEffect(() => {
     api.getHotspots().then((data) => {
@@ -59,6 +61,7 @@ export function HeatmapPanel() {
             {hotspots.map((h) => (
               <li
                 key={h.rank}
+                onClick={() => setSelectedHotspot(h)}
                 className="flex items-center gap-3 panel-inset px-3 py-2.5 hover:border-primary/40 transition-colors cursor-pointer"
               >
                 <div className="w-6 h-6 rounded font-mono text-[11px] font-bold bg-primary/15 text-primary flex items-center justify-center">
@@ -76,6 +79,13 @@ export function HeatmapPanel() {
           </Link>
         </div>
       </div>
+
+      {selectedHotspot && (
+        <HotspotDetailModal 
+          hotspot={selectedHotspot} 
+          onClose={() => setSelectedHotspot(null)} 
+        />
+      )}
     </div>
   );
 }

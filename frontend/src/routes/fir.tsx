@@ -21,7 +21,8 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { api } from "@/lib/api";
+import { api, type IncidentItem } from "@/lib/api";
+import { IncidentDetailModal } from "@/components/crimevista/IncidentDetailModal";
 
 export const Route = createFileRoute("/fir")({
   component: FirPage,
@@ -59,14 +60,16 @@ const statusTone = (s: string) =>
   s === "Closed" || s === "Solved" ? "success" : s === "Under Investigation" ? "warning" : s === "Forwarded" ? "info" : "default";
 
 function FirPage() {
-  const [firs, setFirs] = useState<Array<{ id: string; ps: string; type: string; area: string; officer: string; status: string; priority: string; time: string }>>(FIRS_FALLBACK);
+  const [firs, setFirs] = useState<Array<IncidentItem & { ps: string; type: string; area: string; officer: string; time: string }>>(FIRS_FALLBACK as any);
   const [totalCount, setTotalCount] = useState<number>(18472);
   const [search, setSearch] = useState<string>("");
+  const [selectedIncident, setSelectedIncident] = useState<IncidentItem | null>(null);
 
   useEffect(() => {
     api.getIncidents({ limit: 12, district: search || undefined }).then((data) => {
       if (data && data.items && data.items.length > 0) {
-        const mapped = data.items.map((it: any, idx: number) => ({
+          const mapped = data.items.map((it: any, idx: number) => ({
+          ...it,
           id: it.case_number || `FIR-2026-${(18472 - idx).toString().padStart(6, "0")}`,
           ps: it.police_station || "District PS",
           type: it.crime_type || "General Case",
@@ -159,7 +162,7 @@ function FirPage() {
             </thead>
             <tbody>
               {firs.map((f) => (
-                <tr key={f.id} className="border-b hairline hover:bg-white/[0.03] transition-colors">
+                <tr key={f.id} className="border-b hairline hover:bg-white/[0.05] transition-colors cursor-pointer" onClick={() => setSelectedIncident(f)}>
                   <td className="py-2.5 pr-3 font-mono text-primary">{f.id}</td>
                   <td className="py-2.5 pr-3 flex items-center gap-2"><FileText className="w-3.5 h-3.5 text-secondary" />{f.type}</td>
                   <td className="py-2.5 pr-3">{f.ps}</td>
@@ -169,7 +172,7 @@ function FirPage() {
                   <td className="py-2.5 pr-3"><Chip tone={statusTone(f.status) as never}>{f.status}</Chip></td>
                   <td className="py-2.5 pr-3 text-secondary font-mono text-[11px]">{f.time}</td>
                   <td className="py-2.5 text-right">
-                    <div className="inline-flex items-center gap-1">
+                    <div className="inline-flex items-center gap-1" onClick={(e) => e.stopPropagation()}>
                       <button className="panel-inset w-7 h-7 rounded flex items-center justify-center hover:text-primary"><Eye className="w-3.5 h-3.5" /></button>
                       <button className="panel-inset w-7 h-7 rounded flex items-center justify-center hover:text-primary"><MoreHorizontal className="w-3.5 h-3.5" /></button>
                     </div>
@@ -188,6 +191,13 @@ function FirPage() {
           </div>
         </div>
       </Panel>
+
+      {selectedIncident && (
+        <IncidentDetailModal 
+          incident={selectedIncident} 
+          onClose={() => setSelectedIncident(null)} 
+        />
+      )}
     </AppShell>
   );
 }

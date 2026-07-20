@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AppShell, PageHeader } from "@/components/crimevista/AppShell";
 import { Panel, Chip, Btn, StatTile } from "@/components/crimevista/ui";
 import { ActivityTable } from "@/components/crimevista/ActivityTable";
+import { CaseDetailModal } from "@/components/crimevista/CaseDetailModal";
 import { Briefcase, Filter, Plus, Search, User } from "lucide-react";
 import { api, type CaseItem } from "@/lib/api";
 
@@ -30,6 +31,7 @@ const prTone = (p: string) => p === "Critical" ? "danger" : p === "High" ? "warn
 function CasesPage() {
   const [cases, setCases] = useState<Array<{ id: string; title: string; lead: string; team: number; progress: number; status: string; priority: string }>>(CASES_FALLBACK);
   const [search, setSearch] = useState<string>("");
+  const [selectedCase, setSelectedCase] = useState<any | null>(null);
 
   useEffect(() => {
     api.getCases().then((data) => {
@@ -117,7 +119,7 @@ function CasesPage() {
               </div>
               <div className="flex items-center justify-between pt-1">
                 <Chip>{c.status}</Chip>
-                <Btn variant="outline">Open</Btn>
+                <Btn variant="outline" onClick={() => setSelectedCase(c)}>Open</Btn>
               </div>
             </div>
           ))}
@@ -125,6 +127,13 @@ function CasesPage() {
       </Panel>
 
       <ActivityTable />
+
+      {selectedCase && (
+        <CaseDetailModal 
+          caseItem={selectedCase} 
+          onClose={() => setSelectedCase(null)} 
+        />
+      )}
     </AppShell>
   );
 }

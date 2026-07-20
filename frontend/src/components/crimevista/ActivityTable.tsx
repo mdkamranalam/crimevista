@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Search, SlidersHorizontal, Download } from "lucide-react";
 import { api, type IncidentItem } from "@/lib/api";
+import { IncidentDetailModal } from "./IncidentDetailModal";
 
 export function ActivityTable() {
   const [items, setItems] = useState<IncidentItem[]>([]);
   const [totalCount, setTotalCount] = useState<number>(18472);
   const [search, setSearch] = useState<string>("");
+  const [selectedIncident, setSelectedIncident] = useState<IncidentItem | null>(null);
 
   useEffect(() => {
     api.getIncidents({ limit: 8, district: search || undefined }).then((data) => {
@@ -65,7 +67,8 @@ export function ActivityTable() {
             {items.map((r) => (
               <tr
                 key={r.id}
-                className="border-b hairline last:border-b-0 hover:bg-white/[0.02] transition-colors"
+                onClick={() => setSelectedIncident(r)}
+                className="border-b hairline last:border-b-0 hover:bg-white/[0.05] transition-colors cursor-pointer"
               >
                 <td className="py-3 pr-3 font-mono text-[11.5px]">{r.case_number || r.id.slice(0, 8)}</td>
                 <td className="py-3 pr-3 text-secondary">{r.date_time ? new Date(r.date_time).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" }) : "Today"}</td>
@@ -95,6 +98,13 @@ export function ActivityTable() {
           ))}
         </div>
       </div>
+      
+      {selectedIncident && (
+        <IncidentDetailModal 
+          incident={selectedIncident} 
+          onClose={() => setSelectedIncident(null)} 
+        />
+      )}
     </div>
   );
 }
