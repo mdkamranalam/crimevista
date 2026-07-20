@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "start": "node .output/server/index.mjs",
-    "build": "vite build",
+    "build": "NITRO_PRESET=node-server vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
