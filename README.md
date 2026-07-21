@@ -13,8 +13,8 @@ The platform moves law enforcement from reactive, siloed Excel sheet reporting t
 
 ## 🟢 Live Demo
 
-- **Frontend (Web Dashboard):** [https://crimevista.onrender.com](https://crimevista.onrender.com)
-- **Backend (FastAPI & AI/ML):** [https://crimevista-backend-ufdv.onrender.com/docs](https://crimevista-backend-ufdv.onrender.com/docs)
+- **Frontend (Web Dashboard):** [https://crimevista.development.catalystappsail.in/](https://crimevista.development.catalystappsail.in/)
+- **Backend (FastAPI & AI/ML):** [https://crimevista-backend-50044225541.development.catalystappsail.in/docs](https://crimevista-backend-50044225541.development.catalystappsail.in/docs)
 
 ---
 

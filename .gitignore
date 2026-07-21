@@ -52,4 +52,12 @@ yarn-debug.log*
 pnpm-debug.log*
 
 # Large raw datasets (if > 100MB to prevent GitHub file size rejection without Git LFS)
-# data/*.csv
+data/*.csv
+
+# AppSail Deployment Artifacts
+backend_deploy/
+app.zip
+
+# TanStack Start / Nitro / Nuxt Output
+frontend/.output/
+frontend/.tanstack/
