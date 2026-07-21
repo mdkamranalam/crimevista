@@ -1,0 +1,7 @@
+{
+  "command": "sh start.sh",
+  "build_path": ".",
+  "stack": "python310",
+  "name": "crimevista-backend",
+  "type": "catalyst-managed"
+}

@@ -1,0 +1,12 @@
+{
+  "env": {
+    "PORT": "9000",
+    "HOST": "0.0.0.0",
+    "NITRO_HOST": "0.0.0.0"
+  },
+  "command": "npm start",
+  "build_path": ".",
+  "stack": "node22",
+  "name": "crimevista-frontend",
+  "type": "catalyst-managed"
+}

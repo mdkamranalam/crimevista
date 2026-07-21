@@ -1,0 +1,10 @@
+frontend/
+.venv/
+ai_ml/venv/
+__pycache__/
+.git/
+node_modules/
+data/
+*.db
+*.html
+

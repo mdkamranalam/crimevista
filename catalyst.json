@@ -1,0 +1,14 @@
+{
+  "appsail": [
+    {
+      "name": "crimevista-frontend",
+      "source": "frontend",
+      "projectId": "45086000000013051"
+    },
+    {
+      "name": "crimevista-backend",
+      "source": ".",
+      "projectId": "45086000000013051"
+    }
+  ]
+}
