@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "start": "node .output/server/index.mjs",
+    "start": "node start.mjs",
     "build": "NITRO_PRESET=node-server vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
